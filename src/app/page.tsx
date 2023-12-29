@@ -27,8 +27,8 @@ function HeroImageCover({
           "ease-in-out rounded-3xl overflow-hidden relative",
 
         {
-          "w-2/3 peer-hover:w-1/6 peer-": highlight,
-          "w-1/6 hover:w-2/3 peer": !highlight,
+          "w-2/3 peer-hover:w-1/6": highlight,
+          "w-1/6 hover:w-2/3 peer not-highlight": !highlight,
         },
         className,
         "after:block after:rounded-3xl after:bg-gradient-to-t " +
@@ -49,10 +49,10 @@ function HeroImageCover({
       )}
       <div
         className={clsx(
-          "absolute bottom-16 text-4xl left-1/2 group-hover:transition-all " +
-            "group-hover:duration-500 transform -translate-x-1/2 text-white z-20 ",
+          "absolute bottom-10 left-0 text-4xl w-full text-center group-hover:transition-all " +
+            "group-hover:duration-500 text-white z-20 ",
           {
-            "opacity-100 peer-[hover]:opacity-0": highlight,
+            "opacity-100 peer-hover:group-[]/inner:opacity-0": highlight,
             "opacity-0 group-hover/inner:opacity-100": !highlight,
           },
         )}
