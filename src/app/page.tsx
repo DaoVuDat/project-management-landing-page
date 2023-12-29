@@ -14,7 +14,11 @@ function HeroImageCover({
   alt,
   highlight = false,
   className,
+  horizontalText,
+  verticalText,
 }: {
+  verticalText?: string;
+  horizontalText?: string;
   src: string;
   alt: string;
   highlight?: boolean;
@@ -39,12 +43,12 @@ function HeroImageCover({
       {!highlight && (
         <div
           className={clsx(
-            "absolute bottom-24 text-4xl opacity-100 left-12 " +
+            "absolute bottom-10 text-4xl opacity-100 left-16 orient " +
               "transform -translate-x-1/2 text-white z-20 " +
-              "group-hover/inner:animate-fadeOut animate-fadeIn -rotate-90",
+              "group-hover/inner:animate-fadeOut animate-fadeIn rotate-180",
           )}
         >
-          Vertical
+          {verticalText}
         </div>
       )}
       <div
@@ -57,7 +61,7 @@ function HeroImageCover({
           },
         )}
       >
-        Horizontal
+        {horizontalText}
       </div>
 
       <Image
@@ -76,7 +80,7 @@ function Hero() {
     <Container>
       <div className="flex ">
         <div className="lg:w-1/3">
-          <h1 className="lg:text-7xl">
+          <h1 className="pt-16 font-bold lg:text-7xl lg:leading-[1.1]">
             Watch
             <Dot />
             <br />
@@ -87,14 +91,24 @@ function Hero() {
             <Dot />
           </h1>
         </div>
-        {/*576*/}
         <div className="group w-2/3 h-himg flex justify-between gap-x-4">
-          <HeroImageCover src="/images/hero2.jpg" alt="Hero Image 2" />
-          <HeroImageCover src="/images/hero3.jpg" alt="Hero Image 3" />
+          <HeroImageCover
+            horizontalText={"Hero 2"}
+            verticalText={"Hero 2 Vertical"}
+            src="/images/hero2.jpg"
+            alt="Hero Image 2"
+          />
+          <HeroImageCover
+            horizontalText={"Hero 3"}
+            verticalText={"Hero 3 Vertical"}
+            src="/images/hero3.jpg"
+            alt="Hero Image 3"
+          />
           <HeroImageCover
             src="/images/hero1.jpg"
             alt="Hero Image 1"
             highlight={true}
+            horizontalText={"Hero 1"}
             className="order-first"
           />
         </div>

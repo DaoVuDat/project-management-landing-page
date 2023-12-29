@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .orient {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+}
