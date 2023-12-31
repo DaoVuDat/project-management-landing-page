@@ -17,8 +17,8 @@ function HeroImageCover({
   horizontalText,
   verticalText,
 }: {
-  verticalText?: string;
-  horizontalText?: string;
+  verticalText?: React.ReactNode;
+  horizontalText?: React.ReactNode;
   src: string;
   alt: string;
   highlight?: boolean;
@@ -43,7 +43,7 @@ function HeroImageCover({
       {!highlight && (
         <div
           className={clsx(
-            "absolute bottom-10 text-4xl opacity-100 left-16 orient " +
+            "absolute bottom-10 text-3xl opacity-100 left-16 orient " +
               "transform -translate-x-1/2 text-white z-20 " +
               "group-hover/inner:animate-fadeOut animate-fadeIn rotate-180",
           )}
@@ -53,11 +53,12 @@ function HeroImageCover({
       )}
       <div
         className={clsx(
-          "absolute bottom-10 left-0 text-4xl w-full text-center group-hover:transition-all " +
-            "group-hover:duration-500 text-white z-20 ",
+          "absolute bottom-10 left-0 text-3xl w-full transition-all " +
+            "duration-500 text-white z-20 ",
           {
-            "opacity-100 peer-hover:group-[]/inner:opacity-0": highlight,
-            "opacity-0 group-hover/inner:opacity-100": !highlight,
+            "opacity-100 peer-hover:group-[]/inner:opacity-0 text-center":
+              highlight,
+            "w-80 opacity-0 group-hover/inner:opacity-100 left-10": !highlight,
           },
         )}
       >
@@ -79,7 +80,7 @@ function Hero() {
   return (
     <Container>
       <div className="relative flex">
-        <div className="bottom-16 left-0 lg:absolute lg:w-2/5 lg:h-32 bg-white z-20 relative lg:flex ">
+        <div className="bottom-16 left-0 lg:absolute lg:w-2/5 lg:h-32 bg-white z-30 relative lg:flex ">
           <div
             className="transition duration-300 flex-1 border-t-2 border-l-2 border-b-2 border-transparent
           has-[:focus]:border-secondary has-[:focus]:shadow-2xl"
@@ -118,22 +119,38 @@ function Hero() {
         </div>
         <div className="group w-2/3 h-himg flex justify-between gap-x-4">
           <HeroImageCover
-            horizontalText={"Hero 2"}
-            verticalText={"Hero 2 Vertical"}
-            src="/images/hero2.jpg"
+            horizontalText={
+              <>
+                Strategic Ingenuity <br /> in Action
+              </>
+            }
+            verticalText={"Solving"}
+            src="/images/test/hero2.jpg"
             alt="Hero Image 2"
           />
           <HeroImageCover
-            horizontalText={"Hero 3"}
-            verticalText={"Hero 3 Vertical"}
-            src="/images/hero3.jpg"
+            horizontalText={
+              <>
+                Precision in
+                <br />
+                Every Project
+              </>
+            }
+            verticalText={"Solution"}
+            src="/images/test/hero3.jpg"
             alt="Hero Image 3"
           />
           <HeroImageCover
-            src="/images/hero1.jpg"
+            src="/images/test/hero1.jpg"
             alt="Hero Image 1"
             highlight={true}
-            horizontalText={"Hero 1"}
+            horizontalText={
+              <>
+                Problem
+                <br />
+                Definition
+              </>
+            }
             className="order-first"
           />
         </div>
