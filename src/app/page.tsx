@@ -53,10 +53,10 @@ function HeroImageCover({
       )}
       <div
         className={clsx(
-          "absolute bottom-10 left-0 text-3xl w-full transition-all " +
+          "absolute bottom-10 left-0 text-3xl  transition-all " +
             "duration-500 text-white z-20 ",
           {
-            "opacity-100 peer-hover:group-[]/inner:opacity-0 text-center":
+            "w-full opacity-100 peer-hover:group-[]/inner:opacity-0 text-center":
               highlight,
             "w-96 opacity-0 group-hover/inner:opacity-100 left-10": !highlight,
           },
@@ -103,7 +103,7 @@ function Hero() {
         <div className="lg:w-1/3">
           <h1
             className={clsx(
-              "pt-16 font-bold lg:text-7xl lg:tracking-wide lg:leading-[1.2]",
+              "pt-16 lg:text-7xl lg:tracking-wide lg:leading-[1.2]",
               lato.className,
             )}
           >
