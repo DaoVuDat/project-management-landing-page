@@ -3,7 +3,7 @@ import { Container } from "@/app/components/Container";
 import { Header } from "@/app/components/Header";
 import Image from "next/image";
 import clsx from "clsx";
-import { varela } from "@/app/font";
+import { lato, varela } from "@/app/font";
 
 function Dot() {
   return <span className={varela.className}>.</span>;
@@ -78,16 +78,41 @@ function HeroImageCover({
 function Hero() {
   return (
     <Container>
-      <div className="flex ">
+      <div className="relative flex">
+        <div className="bottom-16 left-0 lg:absolute lg:w-2/5 lg:h-32 bg-white z-20 relative lg:flex ">
+          <div
+            className="transition duration-300 flex-1 border-t-2 border-l-2 border-b-2 border-transparent
+          has-[:focus]:border-secondary has-[:focus]:shadow-2xl"
+          >
+            <input
+              type="text"
+              placeholder="Get Started: Enter Your Email"
+              className="outline-none w-full h-full px-8 py-4 text-lg
+              placeholder:text-black focus:placeholder:text-slate-400"
+            />
+          </div>
+          <button
+            className="group block relative transition-all duration-300 lg:h-32 lg:w-32 bg-secondary2 text-3xl
+            cursor-pointer shadow-[inset_0_150px_0_0_#FD841F]
+          font-semibold hover:shadow-[inset_0_150px_0_-150px_#FD841F]"
+          >
+            Go
+          </button>
+        </div>
         <div className="lg:w-1/3">
-          <h1 className="pt-16 font-bold lg:text-7xl lg:leading-[1.1]">
-            Watch
+          <h1
+            className={clsx(
+              "pt-16 font-bold lg:text-7xl lg:tracking-wide lg:leading-[1.2]",
+              lato.className,
+            )}
+          >
+            Optimize
             <Dot />
             <br />
-            Learn
+            Track
             <Dot />
             <br />
-            Grow
+            Succeed
             <Dot />
           </h1>
         </div>

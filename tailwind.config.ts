@@ -18,6 +18,8 @@ const config: Config = {
       colors: {
         secondary: "#FD841F",
         primary: "#001253",
+        secondary2: "#97c680",
+        "background-color": "#EBEBEB",
       },
       animation: {
         fadeOut: "fadeOut 200ms ease-in-out both",
