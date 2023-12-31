@@ -58,7 +58,7 @@ function HeroImageCover({
           {
             "opacity-100 peer-hover:group-[]/inner:opacity-0 text-center":
               highlight,
-            "w-80 opacity-0 group-hover/inner:opacity-100 left-10": !highlight,
+            "w-96 opacity-0 group-hover/inner:opacity-100 left-10": !highlight,
           },
         )}
       >
