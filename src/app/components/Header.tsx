@@ -14,9 +14,9 @@ export function Header() {
               <Logo className="h-20 w-auto" />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="#passion">Find passion</NavLink>
-              <NavLink href="#categories">Categories</NavLink>
-              <NavLink href="#skills">Skills</NavLink>
+              <NavLink href="#">Contact</NavLink>
+              <NavLink href="#projects">Projects</NavLink>
+              <NavLink href="#features">Features</NavLink>
               <NavLink href="#customers">Customers</NavLink>
             </div>
           </div>
