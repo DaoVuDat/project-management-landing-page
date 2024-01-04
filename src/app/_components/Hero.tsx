@@ -1,8 +1,12 @@
-import { lato, varela } from "@/app/font";
+import { lato } from "@/app/font";
 import clsx from "clsx";
 import Image from "next/image";
-import { Container } from "@/app/components/Container";
-import { Dot } from "@/app/components/Dot";
+import { Container } from "@/app/_components/Container";
+import { Dot } from "@/app/_components/Dot";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import hero1 from "@/app/assets/images/hero1.webp";
+import hero2 from "@/app/assets/images/hero2.webp";
+import hero3 from "@/app/assets/images/hero3.webp";
 
 function HeroImageCover({
   src,
@@ -14,7 +18,7 @@ function HeroImageCover({
 }: {
   verticalText?: React.ReactNode;
   horizontalText?: React.ReactNode;
-  src: string;
+  src: string | StaticImport;
   alt: string;
   highlight?: boolean;
   className?: string;
@@ -22,7 +26,7 @@ function HeroImageCover({
   return (
     <div
       className={clsx(
-        "group/inner inline-block h-himg duration-500 transition-all border border-transparent " +
+        "group/inner inline-block h-himg duration-700 transition-all border border-transparent " +
           "ease-in-out rounded-3xl overflow-hidden relative",
 
         {
@@ -120,7 +124,7 @@ export function Hero() {
               </>
             }
             verticalText={"Solving"}
-            src="/images/hero2.jpg"
+            src={hero2}
             alt="Hero Image 2"
           />
           <HeroImageCover
@@ -132,11 +136,11 @@ export function Hero() {
               </>
             }
             verticalText={"Solution"}
-            src="/images/hero3.jpg"
+            src={hero3}
             alt="Hero Image 3"
           />
           <HeroImageCover
-            src="/images/hero1.jpg"
+            src={hero1}
             alt="Hero Image 1"
             highlight={true}
             horizontalText={
