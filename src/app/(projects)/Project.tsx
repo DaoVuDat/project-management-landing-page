@@ -21,6 +21,7 @@ export function Project({ project, className }: ProjectProp) {
     <div className={clsx("flex", className)}>
       <div className="shrink-0 lg:w-96 lg:h-96">
         <Image
+          key={project.name}
           src={project.img}
           alt={project.title}
           className="h-full w-full object-cover"
