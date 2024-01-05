@@ -1,17 +1,17 @@
 "use client";
-import { Container } from "@/app/_components/Container";
+import { Container } from "@/components/shared/Container";
 import clsx from "clsx";
 import { lato } from "@/app/font";
-import { Dot } from "@/app/_components/Dot";
-import { useState } from "react";
+import { Dot } from "@/components/shared/Dot";
+import React, { useState } from "react";
 import avoa from "@/app/assets/images/avoa_greenhouse.webp";
 import poa from "@/app/assets/images/poa_cvrp.webp";
 import alo from "@/app/assets/images/alo_site_layout.webp";
 import dlgwo from "@/app/assets/images/dl_gwo_bim.webp";
 import da from "@/app/assets/images/da_supply_chain.webp";
-import { Project } from "@/app/(projects)/Project";
+import { Project, ProjectType } from "@/components/projects/Project";
 
-const projectsData: Project[] = [
+const projectsData: ProjectType[] = [
   {
     name: "AVOA Green House",
     description:
@@ -59,14 +59,20 @@ const projectsData: Project[] = [
   },
 ];
 
-export function Projects({ id }: { id?: string }) {
+export function Projects({
+  id,
+  className,
+}: {
+  id?: string;
+  className?: string;
+}) {
   const [selectedId, setSelectedId] = useState(0);
 
   const highlight = " text-black drop-shadow-md ";
   const notHighlight = " group text-slate-700 ";
 
   return (
-    <Container id={id} className="mt-24">
+    <Container id={id} className={className}>
       <h1
         className={clsx(
           "text-center text-5xl tracking-wider py-8",

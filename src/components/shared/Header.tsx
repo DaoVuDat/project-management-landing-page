@@ -1,8 +1,8 @@
-import { Container } from "@/app/_components/Container";
+import { Container } from "@/components/shared/Container";
 import Link from "next/link";
-import Logo from "@/app/_components/Logo";
-import { NavLink } from "@/app/_components/NavLink";
-import { Button } from "@/app/_components/Button";
+import Logo from "@/components/shared/Logo";
+import { NavLink } from "@/components/shared/NavLink";
+import { Button } from "@/components/shared/Button";
 
 export function Header() {
   return (

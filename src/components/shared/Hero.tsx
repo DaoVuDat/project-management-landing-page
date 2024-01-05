@@ -1,8 +1,8 @@
 import { lato } from "@/app/font";
 import clsx from "clsx";
 import Image from "next/image";
-import { Container } from "@/app/_components/Container";
-import { Dot } from "@/app/_components/Dot";
+import { Container } from "@/components/shared/Container";
+import { Dot } from "@/components/shared/Dot";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import hero1 from "@/app/assets/images/hero1.webp";
 import hero2 from "@/app/assets/images/hero2.webp";
@@ -67,8 +67,7 @@ function HeroImageCover({
       <Image
         src={src}
         alt={alt}
-        width={600}
-        height={600}
+        fill
         className={clsx("w-full h-full object-cover object-center")}
       />
     </div>

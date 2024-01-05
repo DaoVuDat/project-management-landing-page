@@ -1,6 +1,8 @@
-import { Header } from "@/app/_components/Header";
-import { Hero } from "@/app/_components/Hero";
-import { Projects } from "@/app/(projects)/Projects";
+import { Header } from "@/components/shared/Header";
+import { Hero } from "@/components/shared/Hero";
+import { Projects } from "@/components/projects/Projects";
+import { Features } from "@/components/features/Features";
+import { Footer } from "@/components/shared/Footer";
 
 export default function Home() {
   return (
@@ -8,9 +10,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Projects id="projects" />
+        <Projects id="projects" className="mt-24" />
+        <Features id="features" className="mt-24" />
       </main>
-      <footer>footer</footer>
+      <Footer className="mt-24" />
     </>
   );
 }
