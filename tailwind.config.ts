@@ -12,7 +12,9 @@ const config: Config = {
         sans: ["var(--font-archia)"],
       },
       spacing: {
+        "104": "26rem",
         "112": "28rem",
+        "144": "36rem",
         himg: "550px",
       },
       colors: {

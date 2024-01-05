@@ -67,7 +67,6 @@ function HeroImageCover({
       <Image
         src={src}
         alt={alt}
-        fill
         className={clsx("w-full h-full object-cover object-center")}
       />
     </div>
