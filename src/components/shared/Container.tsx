@@ -1,17 +1,12 @@
 import clsx from "clsx";
 
-interface ContainerProp {
+export interface BaseProp {
   id?: string;
   className?: string;
   children?: React.ReactNode;
 }
 
-export function Container({
-  id,
-  className,
-  children,
-  ...props
-}: ContainerProp) {
+export function Container({ id, className, children, ...props }: BaseProp) {
   return (
     <div
       id={id}

@@ -1,4 +1,4 @@
-import { Container } from "@/components/shared/Container";
+import { BaseProp, Container } from "@/components/shared/Container";
 import { BiCheckShield } from "react-icons/bi";
 import { FaRegHandshake } from "react-icons/fa";
 import { GiProgression } from "react-icons/gi";
@@ -6,7 +6,6 @@ import React from "react";
 import clsx from "clsx";
 import { lato } from "@/app/font";
 import { Dot } from "@/components/shared/Dot";
-import ReactPlayer from "react-player";
 import { VideoPlayer } from "@/components/features/VideoPlayer";
 
 interface FeatProps {
@@ -69,13 +68,7 @@ function ListFeat() {
   );
 }
 
-export function Features({
-  className,
-  id,
-}: {
-  className?: string;
-  id?: string;
-}) {
+export function Features({ className, id }: BaseProp) {
   return (
     <Container className={className} id={id}>
       <div className="flex justify-between mb-10">
