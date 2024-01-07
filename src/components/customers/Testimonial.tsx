@@ -45,10 +45,10 @@ export function Testimonial({ id, className }: BaseProp) {
         ))}
       </ul>
       <div className="flex text-2xl justify-center items-center space-x-8">
-        <span className="p-3 cursor-pointer rounded-full border border-transparent transition duration-300 hover:border-slate-300">
+        <span className="p-3 cursor-pointer rounded-full border border-transparent transition duration-300 hover:border-slate-400">
           <HiArrowSmallLeft />
         </span>
-        <span className="p-3 cursor-pointer rounded-full border border-transparent transition duration-300 hover:border-slate-300">
+        <span className="p-3 cursor-pointer rounded-full border border-transparent transition duration-300 hover:border-slate-400">
           <HiArrowSmallRight />
         </span>
       </div>

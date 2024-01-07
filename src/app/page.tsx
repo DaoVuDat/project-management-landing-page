@@ -15,6 +15,7 @@ export default function Home() {
         <Features id="features" className="mt-24" />
         <Testimonial id="customers" className="mt-24" />
       </main>
+      <section></section>
       <Footer className="mt-24" />
     </>
   );
