@@ -17,8 +17,13 @@ export function Carousel({
 
   const x = useMotionValue(0);
   const diff = carouselWidth - screenWidth;
-  const offset = 112; // 112px for margin left and right of first and last card respectively
-  const velocity = 450; // 450px for slider
+  let velocity = 450; // 450px for slider
+  if (screenWidth > 768) {
+  } else if (screenWidth > 1280) {
+    let velocity = 450;
+  } else if (screenWidth > 1500) {
+    let velocity = 500;
+  }
 
   const next = () => {
     if (x.get() <= 0) {
@@ -26,13 +31,13 @@ export function Carousel({
       if (willMove > -diff) {
         animate(x, willMove);
       } else {
-        animate(x, -diff - offset);
+        animate(x, -diff);
       }
     }
   };
 
   const prev = () => {
-    if (x.get() >= -diff - offset) {
+    if (x.get() >= -diff) {
       const willMove = x.get() + velocity;
       if (willMove < 0) {
         animate(x, willMove);
@@ -48,14 +53,11 @@ export function Carousel({
   }, []);
 
   return (
-    <>
-      <ul
-        ref={ref}
-        className="mt-8 flex space-x-10 lg:w-screen overflow-x-hidden"
-      >
+    <Container>
+      <ul ref={ref} className="mt-8 flex space-x-10 overflow-x-hidden">
         {testimonials.map((t) => (
           <motion.li
-            className="first:ml-28 last:mr-28 w-96 shrink-0 grow-0"
+            className="w-96 shrink-0 grow-0"
             style={{ x: x }}
             key={t.name}
           >
@@ -79,6 +81,6 @@ export function Carousel({
           </span>
         </div>
       </Container>
-    </>
+    </Container>
   );
 }

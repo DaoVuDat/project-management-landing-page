@@ -8,7 +8,7 @@ export function Header() {
   return (
     <header className="py-10">
       <Container>
-        <nav className="z-10 flex justify-between">
+        <nav className="z-10 lg:flex lg:justify-between xl:text-lg">
           <div className="flex items-center md:gap-x-10">
             <Link className="group" href="/">
               <Logo className="h-20 w-auto" />
