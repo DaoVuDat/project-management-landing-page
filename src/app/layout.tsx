@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import localFont from "next/font/local";
 import { archia } from "@/app/font";
+
+export const viewport: Viewport = {
+  minimumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "TrackPro | Project Management Tracking",

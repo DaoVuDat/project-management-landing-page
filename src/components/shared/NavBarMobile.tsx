@@ -18,22 +18,26 @@ export function NavBarClient() {
         <div onClick={() => setIsOpen((s) => !s)}>Button</div>
       </div>
 
-      <div className="h-screen flex flex-col justify-between">
-        <div className="mt-16 flex flex-col justify-between items-center text-lg">
-          <NavLink href="#">Contact</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#features">Features</NavLink>
-          <NavLink href="#customers">Customers</NavLink>
-        </div>
-        <div className="flex justify-between items-center ">
-          <div>
-            <NavLink href="/login">Login</NavLink>
+      {isOpen ? (
+        <>
+          <div className="h-screen flex flex-col justify-between">
+            <div className="mt-16 flex flex-col justify-between items-center text-lg">
+              <NavLink href="#">Contact</NavLink>
+              <NavLink href="#projects">Projects</NavLink>
+              <NavLink href="#features">Features</NavLink>
+              <NavLink href="#customers">Customers</NavLink>
+            </div>
+            <div className="flex justify-between items-center ">
+              <div>
+                <NavLink href="/login">Login</NavLink>
+              </div>
+              <Button href="/register">
+                <span>Sign Up Now</span>
+              </Button>
+            </div>
           </div>
-          <Button href="/register">
-            <span>Sign Up Now</span>
-          </Button>
-        </div>
-      </div>
+        </>
+      ) : null}
     </div>
   );
 }
