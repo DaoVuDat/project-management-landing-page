@@ -10,7 +10,10 @@ export function Container({ id, className, children, ...props }: BaseProp) {
   return (
     <div
       id={id}
-      className={clsx("mx-auto lg:max-w-7xl xl:max-w-[1500px] px-4 sm:px-6 lg:px-8", className)}
+      className={clsx(
+        "mx-auto lg:max-w-7xl xl:max-w-[1500px] px-4 sm:px-6 lg:px-8 xl:px-16",
+        className,
+      )}
       {...props}
     >
       {children}

@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${archia.className} antialiased scroll-smooth bg-background-color`}
+        className={`${archia.className} antialiased scroll-smooth bg-background-color relative w-full `}
       >
         {children}
       </body>
