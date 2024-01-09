@@ -15,13 +15,13 @@ export function VideoPlayer() {
         <ReactPlayer
           url="./video/intro_video.webm"
           playing={true}
-          playsinline
+          playsinline={true}
           loop={true}
           muted={true}
           volume={0}
           width="100%"
           height="100%"
-          controls={false}
+          controls={true}
         />
       )}
     </>
