@@ -13,7 +13,10 @@ export function VideoPlayer() {
     <>
       {hasWindow && (
         <ReactPlayer
-          url="./video/intro_video.webm"
+          url={[
+            { src: "./video/intro_video.webm", type: "video/webm" },
+            { src: "./video/intro_video.mp4", type: "video/mp4" },
+          ]}
           playing={true}
           playsinline={true}
           loop={true}
@@ -21,7 +24,7 @@ export function VideoPlayer() {
           volume={0}
           width="100%"
           height="100%"
-          controls={true}
+          controls={false}
         />
       )}
     </>
