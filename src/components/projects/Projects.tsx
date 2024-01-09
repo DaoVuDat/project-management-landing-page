@@ -10,6 +10,7 @@ import alo from "@/app/assets/images/alo_site_layout.webp";
 import dlgwo from "@/app/assets/images/dl_gwo_bim.webp";
 import da from "@/app/assets/images/da_supply_chain.webp";
 import { Project, ProjectType } from "@/components/projects/Project";
+import { ProjectMobile } from "@/components/projects/ProjectMobile";
 
 const projectsData: ProjectType[] = [
   {
@@ -75,7 +76,7 @@ export function Projects({
     <Container id={id} className={className}>
       <h1
         className={clsx(
-          "text-center text-5xl tracking-wider py-8",
+          "text-center text-4xl py-4 lg:text-5xl lg:tracking-wider lg:py-8",
           lato.className,
         )}
       >
@@ -83,7 +84,7 @@ export function Projects({
         <Dot color="text-secondary" />
       </h1>
       <div className="mt-4">
-        <ul className="flex justify-center space-x-16">
+        <ul className="hidden lg:flex lg:flex-row lg:justify-center lg:space-x-16">
           {projectsData.map((project, index) => (
             <li
               onClick={() => setSelectedId(index)}
@@ -108,6 +109,11 @@ export function Projects({
         </ul>
       </div>
       <Project className="mt-16" project={projectsData[selectedId]} />
+      <div className="flex flex-col space-y-8 lg:hidden">
+        {projectsData.map((project) => (
+          <ProjectMobile project={project} key={project.name} />
+        ))}
+      </div>
     </Container>
   );
 }

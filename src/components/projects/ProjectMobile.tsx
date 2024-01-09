@@ -1,25 +1,18 @@
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import clsx from "clsx";
-import { IoCheckmarkDoneSharp } from "react-icons/io5";
-import Image from "next/image";
+import { ProjectType } from "@/components/projects/Project";
 
-export interface ProjectType {
-  name: string;
-  description: string;
-  img: StaticImport;
-  title: string;
-  use: string[];
-}
+import Image from "next/image";
+import { IoCheckmarkDoneSharp } from "react-icons/io5";
+import clsx from "clsx";
 
 interface ProjectProp {
   className?: string;
   project?: ProjectType;
 }
 
-export function Project({ project, className }: ProjectProp) {
+export function ProjectMobile({ project, className }: ProjectProp) {
   return (
-    <div className={clsx("hidden lg:flex", className)}>
-      <div className="shrink-0 w-96 h-96">
+    <div className={clsx(className)}>
+      <div className="w-full h-auto">
         <Image
           key={project!.name}
           src={project!.img}
@@ -30,16 +23,16 @@ export function Project({ project, className }: ProjectProp) {
           priority={true}
         />
       </div>
-      <div className="relative px-10">
-        <h3 className="text-center text-3xl">{project!.name}</h3>
-        <p className="mt-2 leading-loose">{project!.description}</p>
+      <div className="relative">
+        <h3 className="mt-4 text-center text-2xl">{project!.name}</h3>
+        <p className="mt-3 leading-loose text-sm">{project!.description}</p>
         <div className="flex flex-col mt-2 font-bold">
           <div>Uses:</div>
           <ul>
             {project!.use.map((tech) => (
               <li
                 key={tech}
-                className="flex items-center space-x-2 text-lg leading-loose mt-1"
+                className="flex items-center space-x-2 leading-loose mt-1"
               >
                 <IoCheckmarkDoneSharp />
                 <span className="text-base">{tech}</span>
@@ -48,6 +41,7 @@ export function Project({ project, className }: ProjectProp) {
           </ul>
         </div>
       </div>
+      <div className="w-full h-1 border-b border-slate-400 mt-4" />
     </div>
   );
 }
