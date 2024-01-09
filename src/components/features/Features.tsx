@@ -112,7 +112,7 @@ export function Features({ className, id }: BaseProp) {
       </div>
       <div className="mt-14 lg:mt-0 flex flex-col lg:flex-row lg:space-x-4 lg:items-end lg:justify-between">
         <ListFeat />
-        <div className="order-first lg:order-last w-full h-auto lg:w-auto lg:h-112 rounded-2xl overflow-hidden">
+        <div className="order-first lg:order-last w-full h-auto lg:w-auto lg:h-112 rounded-2xl overflow-hidden ">
           <VideoPlayer />
         </div>
       </div>

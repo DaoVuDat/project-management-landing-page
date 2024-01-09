@@ -15,9 +15,10 @@ export function VideoPlayer() {
         <ReactPlayer
           url="./video/intro_video.webm"
           playing={true}
-          playsinline={true}
+          playsinline
           loop={true}
           muted={true}
+          volume={0}
           width="100%"
           height="100%"
           controls={false}
