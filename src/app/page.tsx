@@ -24,23 +24,23 @@ export default function Home() {
       </main>
       <section className="mt-16">
         <Container>
-          <div className="flex justify-between text-lg">
+          <div className="flex flex-col space-y-4 min-[540px]:flex-row min-[540px]:justify-between min-[540px]:text-lg">
             <div className="flex flex-col items-start space-y-3">
               <Logo className="h-20 w-auto" />
               <div className="flex space-x-4 items-center">
-                <span className="text-2xl">
+                <span className="text-3xl lg:text-2xl">
                   <HiOutlineMail />
                 </span>
                 <span>dat.daovu@gmail.com</span>
               </div>
               <div className="flex space-x-4 items-center">
-                <span className="text-2xl">
+                <span className="text-3xl lg:text-2xl">
                   <AiOutlinePhone />
                 </span>
                 <span>(+84) 093.143.5335 - (+84) 079.230.4323</span>
               </div>
               <div className="flex space-x-4 items-center">
-                <span className="text-2xl">
+                <span className="text-3xl lg:text-2xl">
                   <FaRegAddressCard />
                 </span>
                 <span>Ho Chi Minh City (HCMC), Vietnam</span>
