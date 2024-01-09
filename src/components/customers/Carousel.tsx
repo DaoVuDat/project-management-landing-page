@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { motion, useMotionValue, animate } from "framer-motion";
 import { HiArrowSmallLeft, HiArrowSmallRight } from "react-icons/hi2";
 import { Container } from "@/components/shared/Container";
+import useWindowDimensions from "@/hooks/useWindowDimension";
 
 export function Carousel({
   testimonials,
@@ -15,14 +16,17 @@ export function Carousel({
   const [carouselWidth, setCarouselWidth] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
 
+  const dimension = useWindowDimensions();
+
   const x = useMotionValue(0);
   const diff = carouselWidth - screenWidth;
-  let velocity = 450; // 450px for slider
-  if (screenWidth > 768) {
-  } else if (screenWidth > 1280) {
-    let velocity = 450;
-  } else if (screenWidth > 1500) {
-    let velocity = 500;
+  let velocity = 100; // 450px for slider
+  if (dimension.width! > 1280) {
+    velocity = 350;
+  } else if (dimension.width! > 768) {
+    velocity = 400;
+  } else if (dimension.width! > 300) {
+    velocity = dimension.width! + 8;
   }
 
   const next = () => {
@@ -57,7 +61,7 @@ export function Carousel({
       <ul ref={ref} className="mt-8 flex space-x-10 overflow-x-hidden">
         {testimonials.map((t) => (
           <motion.li
-            className="w-96 shrink-0 grow-0"
+            className="w-full md:w-80 lg:w-96 shrink-0 grow-0"
             style={{ x: x }}
             key={t.name}
           >
@@ -66,19 +70,19 @@ export function Carousel({
         ))}
       </ul>
       <Container className="mt-16">
-        <div className="flex text-2xl justify-center items-stretch space-x-8">
-          <span
-            className="p-3 cursor-pointer rounded-full border border-transparent transition duration-300 hover:border-slate-400"
+        <div className="flex text-3xl lg:text-2xl justify-center items-stretch space-x-12 lg:space-x-8">
+          <button
+            className="p-3 cursor-pointer rounded-full border border-slate-400 lg:border-transparent lg:transition lg:duration-300 lg:hover:border-slate-400"
             onClick={prev}
           >
             <HiArrowSmallLeft />
-          </span>
-          <span
-            className="p-3 cursor-pointer rounded-full border border-transparent transition duration-300 hover:border-slate-400"
+          </button>
+          <button
+            className="p-3 cursor-pointer rounded-full border border-slate-400 lg:border-transparent lg:transition lg:duration-300 lg:hover:border-slate-400"
             onClick={next}
           >
             <HiArrowSmallRight />
-          </span>
+          </button>
         </div>
       </Container>
     </Container>

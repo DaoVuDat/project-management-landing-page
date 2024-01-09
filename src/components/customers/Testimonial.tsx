@@ -47,7 +47,7 @@ export function Testimonial({ id, className }: BaseProp) {
       <Container>
         <h2
           className={clsx(
-            "text-center text-4xl tracking-wider pb-8",
+            "text-center text-4xl lg:text-5xl tracking-wider pb-8",
             lato.className,
           )}
         >

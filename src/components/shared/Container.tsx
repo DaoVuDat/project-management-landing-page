@@ -11,7 +11,7 @@ export function Container({ id, className, children, ...props }: BaseProp) {
     <div
       id={id}
       className={clsx(
-        "mx-auto lg:max-w-7xl xl:max-w-[1500px] px-4 sm:px-6 lg:px-8 xl:px-16",
+        "mx-auto lg:max-w-7xl xl:max-w-[1500px] px-4 md:px-6 lg:px-8 xl:px-16",
         className,
       )}
       {...props}

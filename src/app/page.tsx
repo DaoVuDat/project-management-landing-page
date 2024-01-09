@@ -19,7 +19,7 @@ export default function Home() {
       <main>
         <Hero />
         <Projects id="projects" className="mt-24" />
-        <Features id="features" className="mt-24" />
+        <Features id="features" className="mt-12 lg:mt-24" />
         <Testimonial id="customers" className="mt-24" />
       </main>
       <section className="mt-16">
