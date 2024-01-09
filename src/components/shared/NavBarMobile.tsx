@@ -10,7 +10,7 @@ export function NavBarClient() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="z-[999] fixed top-0 left-0 w-screen lg:hidden bg-background-color">
+    <div className="z-[999] hidden fixed p-6 top-0 left-0 w-screen lg:hidden bg-background-color">
       <div className="flex justify-between items-center">
         <Link className="group" href="/">
           <Logo className="h-12 w-auto" />

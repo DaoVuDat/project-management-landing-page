@@ -22,7 +22,7 @@ export function Header() {
                 <NavLink href="#customers">Customers</NavLink>
               </div>
             </div>
-            <div className="flex items-center gap-x-5 gap-x-8">
+            <div className="flex items-center gap-x-5">
               <div>
                 <NavLink href="/login">Login</NavLink>
               </div>
