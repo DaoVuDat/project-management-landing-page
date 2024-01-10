@@ -76,7 +76,7 @@ function HeroImageCover({
 
 export function Hero() {
   return (
-    <Container className="mt-32 lg:mt-0">
+    <Container className="pt-32 lg:pt-0 lg:mt-0">
       <div className="relative flex flex-col space-y-4 lg:space-y-0 lg:flex-row">
         <div className="order-last mt-16 lg:mt-0 lg:bottom-16 lg:left-0 lg:absolute lg:w-2/5 lg:h-32 bg-white z-30 flex ">
           <div
